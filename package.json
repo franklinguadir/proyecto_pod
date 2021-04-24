@@ -1,0 +1,18 @@
+{
+  "name": "proyecto_1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "buid": "purgecss --css css/custom.css --content index.html --output css/reducido.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.0.0-beta3"
+  },
+  "devDependencies": {
+    "snowpack": "^3.3.5"
+  }
+}
