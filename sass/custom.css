@@ -14,6 +14,11 @@
   background-position: 80% top;
 }
 
+.carusel-item .img-fluid {
+  width: 100%;
+  height: 80%;
+}
+
 /*!
  * Bootstrap v5.0.0-beta3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

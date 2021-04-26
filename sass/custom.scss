@@ -27,4 +27,8 @@ $container-max-widths: (
   xxl: 1320px
 );
 
+.carusel-item .img-fluid{
+    width: 100%;
+    height: 80%;
+  }
 @import "../node_modules/bootstrap/scss/bootstrap";

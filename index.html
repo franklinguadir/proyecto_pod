@@ -7,114 +7,260 @@
     <title>POD Narino</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,300;0,600;0,900;1,100;1,700&display=swap" rel="stylesheet">
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!--script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+
     <link href="./css/custom.css" rel="stylesheet">
 
 
 </head>
 <body>
-    <div class="container bg-white">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a href="#" class="navbar-brand">
-                <img src="./images/logo_gn.png" height="150px">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">POD NARIÑO 
-                            <span class="sr-only">(Actual)</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Gobernación
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item">Organigrama</a>
-                            <a class="dropdown-item">Dependencias</a>
-                            <a class="dropdown-item">Gobernador</a>
-                            <a class="dropdown-item">Gabinetes</a>
-                        </div>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Trámites
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item">Impuesto Vehicular</a>
-                            <a class="dropdown-item">Estampillas</a>
-                            <a class="dropdown-item">Pasaportes</a>
-                            <a class="dropdown-item">Seguimiento a cuentas</a>
-                        </div>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Atención al Ciudadano
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">PQRSD</a>
-                            <a class="dropdown-item" href="#">Ubicación física</a>
-                            <a class="dropdown-item" href="#">Preguntas/ Respuestas frecuentes</a>
-                            <a class="dropdown-item" href="#">Glosario</a>
-                        </div>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Normatividad
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item">Normatividad</a>
-                        </div>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Transparencia
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item">Transparencia</a>
-                        </div>
-                    </li>
-            </div>
-        </nav>         
-    </div>
-
-    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <header>
+        <div class="container-flex bg-white">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a href="#" class="navbar-brand">
+                    <img src="./images/logo_gn.png" height="150px">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">POD NARIÑO 
+                                <span class="sr-only">(Actual)</span>
+                            </a>
+                        </li>
+    
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Gobernación
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item">Organigrama</a>
+                                <a class="dropdown-item">Dependencias</a>
+                                <a class="dropdown-item">Gobernador</a>
+                                <a class="dropdown-item">Gabinetes</a>
+                            </div>
+                        </li>
+    
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Trámites
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item">Impuesto Vehicular</a>
+                                <a class="dropdown-item">Estampillas</a>
+                                <a class="dropdown-item">Pasaportes</a>
+                                <a class="dropdown-item">Seguimiento a cuentas</a>
+                            </div>
+                        </li>
+    
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Atención al Ciudadano
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">PQRSD</a>
+                                <a class="dropdown-item" href="#">Ubicación física</a>
+                                <a class="dropdown-item" href="#">Preguntas/ Respuestas frecuentes</a>
+                                <a class="dropdown-item" href="#">Glosario</a>
+                            </div>
+                        </li>
+    
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Normatividad
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item">Normatividad</a>
+                            </div>
+                        </li>
+    
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Transparencia
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item">Transparencia</a>
+                            </div>
+                        </li>
+                </div>
+            </nav>         
+        </div>
+    </header>
+    
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="10000">
-            <img src="https://www.tun.com/blog/wp-content/uploads/2019/04/cybersecurity.jpg" class="d-block w-100" height="200" width="200" alt="Pasto Nariño">
+            <img src="/images/pexels-cottonbro-5077049.jpg" class="d-block w-100" height='450' alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Técnologias digitales</h5>
+              <p>Ahora podras llevar mapas en tus manos.</p>
+            </div>
           </div>
           <div class="carousel-item" data-bs-interval="2000">
-            <img src="https://azbigmedia.com/wp-content/uploads/2018/12/Honeywell-blockchain-technology.jpg" class="d-block w-100" height="200" alt="Imagen Satelital">
+            <img src="/images/pexels-lorenzo-240834.jpg" class="d-block w-100" height="450"  alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>A partir de datos vectoriales</h5>
+              <p>Podremos hacer la integración con nuestro día a día</p>
+            </div>
           </div>
           <div class="carousel-item">
-            <img src="https://techbullion.com/wp-content/uploads/2019/12/Tech-Companies-in-Singapore-scaled.png" class="d-block w-100" height="200" alt="Imagen picos de arboles">
+            <img src="/images/pexels-pixabay-38271.jpg" class="d-block w-100" height="450" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Así podras resolver necesidades</h5>
+              <p>Que ayuden al desarrollo de nuestro territorio</p>
+            </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
-      </div>
+    </div>
+
+    <main class="container d-flex align-items-center justify-content-center alto-100">
+        <div class="row">
+            <!--columna derecha-->
+            <div class="col-12 col-lg-9 ">
+                 <div class="row">
+                     <div class="col-12 col-lg-6 p-2">
+                         <article class="card h-100 bg-primary text-white fondo-card shadow-sm">
+                             <div class="card-body">
+                                 <div class="d-flex mb-3">
+                                     <img src="./images/image-daniel.jpg" alt="" class="border border-secondary border-3 rounded-circle" >
+                                     <div class="ps-3">
+                                         <h6 class="m-0 h6">Subsistema Natural Biofísico.</h6>
+                                         <p class="m-0 h6">Geoportal</p>
+                                     </div>
+                                 </div>
+                                 <div>
+                                     <p class="fs-6 lh-1">El subsistema natural biofísico analiza el ordenamiento en función de la conservación, la
+                                        preservación y el uso sostenible de los recursos naturales, como soporte del desarrollo físico del
+                                        territorio y la utilización del suelo. La Estructura Ecológica Principal actual del Departamento está basada 
+                                        en la definición de áreas escenciales para la continuidad de procesos ecológicos y evolutivos naturales, tales 
+                                        como: áreas protegidas, ecosistemas estratégicos, estrategias complementarias de conservación y áreas de protección 
+                                        por amenaza alta y no mitigable, algunas respaldadas mediante mecanismos legales de orden nacional y regional las cuales
+                                        reglamentan su uso.</p>
+                                 </div>
+                             </div>
+                         </article>
+                         
+                     </div>
+                                
+                     <div class="col-12 col-lg-6 p-2">
+                         <article class="card h-100 bg-secondary text-white shadow-sm">
+                             <div class="card-body">
+                                 <div class="d-flex mb-3">
+                                     <img src="./images/image-jeanette.jpg" alt="" class="border border-secondary border-3 rounded-circle" >
+                                     <div class="ps-3">
+                                         <h6 class="m-0 h6">Subsistema Gestión del Riesgo.</h6>
+                                         <p class="m-0 h6">Geoportal</p>
+                                     </div>
+                                 </div>
+                                 <div>
+                                     <p class="h6">busca identificar las amenazas que trastocan al Departamento y la Nación, mediante 
+                                         la reducción e intervención de los factores de riesgo. Es aquí donde se establecen los escenarios 
+                                         de impacto regional para determinar aquellos municipios que potencialmente pueden verse más afectados y por cuáles
+                                        fenómenos, para tomar las acciones que desde el nivel nacional o departamental involucren el
+                                        conocimiento, la reducción del riesgo y el manejo de los desastres como los pilares que permitan
+                                        reducir las condiciones existentes de riesgo, así como minimizar nuevas condiciones de riesgo a
+                                        través de la adecuada planificación territorial y sostenible.</p>
+                                    
+                                 </div>
+                             </div>
+                         </article>                        
+                     </div>
+                 
+                     <div class="col-12 col-lg-6 p-2">
+                         <article class="card h-100 bg-succes shadow-sm">
+                             <div class="card-body">
+                                 <div class="d-flex mb-3">
+                                     <img src="./images/image-jonathan.jpg" alt="" class="border border-secondary border-3 rounded-circle" >
+                                     <div class="ps-3">
+                                         <h6 class="m-0 h6">Daniel Pagina Web</h6>
+                                         <p class="m-0 h6">Lorem, ipsum</p>
+                                     </div>
+                                 </div>
+                                 <div>
+                                     <p class="h6">Omega Pro es una oportunidad de MLM con la que puedes ganar dinero a través del 
+                                         Retorno sobre inversión (ROI) prometido que ofrece, y al recomendar a otros el 
+                                         negocio para formar un equipo de miembros afiliados inversores. 
+                                         El nicho en el que diríamos que está esta compañía lo denominaremos como el 
+                                         nicho de Trading</p>
+                                     
+                                 </div>
+                             </div>
+                         </article>
+                     </div>
+                     <div class="col-12 col-lg-6 p-2">
+                         <article class="card h-100 bg-dark text-white shadow-sm">
+                             <div class="card-body">
+                                 <div class="d-flex mb-3">
+                                     <img src="./images/image-patrick.jpg" alt="" class="border border-secondary border-3 rounded-circle" >
+                                     <div class="ps-3">
+                                         <h6 class="m-0 h6">Daniel Pagina Web</h6>
+                                         <p class="m-0 h6">Lorem, ipsum</p>
+                                     </div>
+                                 </div>
+                                 <div>
+                                     <p class="h6">Omega Pro es una oportunidad de MLM con la que puedes ganar dinero a través del 
+                                         Retorno sobre inversión (ROI) prometido que ofrece, y al recomendar a otros el 
+                                         negocio para formar un equipo de miembros afiliados inversores. 
+                                         El nicho en el que diríamos que está esta compañía lo denominaremos como el 
+                                         nicho de Trading</p>
+                                     
+                                 </div>
+                             </div>
+                         </article>
+                     </div>
+                 </div>
+            </div>
+ 
+ 
+            <!--columna izquierda-->
+            <div class="col-12 col-lg-3 px-2">
+             <article class="card h-100 bg-succes shadow-sm">
+                 <div class="card-body">
+                     <div class="d-flex">
+                         <img src="./images/image-kira.jpg" alt="" class="border border-secondary border-3 rounded-circle" >
+                         <div class="ps-3">
+                             <h6 class="m-0 h6">Daniel Pagina Web</h6>
+                             <p class="m-0 h6">Lorem, ipsum</p>
+                         </div>
+                     </div>
+                     <div>
+                         <p class="h6">Omega Pro es una oportunidad de MLM con la que puedes ganar dinero a través del 
+                             Retorno sobre inversión (ROI) prometido que ofrece, y al recomendar a otros el 
+                             negocio para formar un equipo de miembros afiliados inversores. 
+                             El nicho en el que diríamos que está esta compañía lo denominaremos como el 
+                             nicho de Trading</p>
+                         <p class="fs-6 lh-1">Omega Pro es una oportunidad de MLM con la que puedes ganar dinero a través del 
+                             Retorno sobre inversión (ROI) prometido que ofrece, y al recomendar a otros el 
+                             negocio para formar un equipo de miembros afiliados inversores. 
+                             El nicho en el que diríamos que está esta compañía lo denominaremos como el 
+                             nicho de Trading</p>
+                     </div>
+                 </div>
+             </article>
+            </div>
+         </div>
+ 
+     </main>
 
     
-
-
-
 </body>
 </html>
