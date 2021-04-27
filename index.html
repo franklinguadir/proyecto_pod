@@ -6,92 +6,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POD Narino</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,300;0,600;0,900;1,100;1,700&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,300;0,600;0,900;1,100;1,700&display=swap" rel="stylesheet">    
     <link href="./css/custom.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
     <header>
-        <div class="container-flex bg-white">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a href="#" class="navbar-brand">
-                    <img src="./images/logo_gn.png" width="250" height="110" class="d-inline-block align-text-top">
-                    <img src="./images/pod_logo.png" width="100" height="110" class="d-inline-block align-text-top">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-    
-                <div class="collapse navbar-collapse" id="menu">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">POD NARIÑO 
+        <nav class="navbar navbar-expand-lg navbar-success bg-light">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <a class="navbar-brand" href="#">
+                  <img src="/images/logo_gn.png" alt="" width="250" height="110" class="d-inline-block align-text-top">
+                  <img src="/images/pod_logo.png" alt="" width="100" height="110" class="d-inline-block align-text-top">
+              </a>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Geoportal
                                 <span class="sr-only">(Actual)</span>
                             </a>
                         </li>
-    
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Gobernación
                             </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item">Organigrama</a>
-                                <a class="dropdown-item">Dependencias</a>
-                                <a class="dropdown-item">Gobernador</a>
-                                <a class="dropdown-item">Gabinetes</a>
-                            </div>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item">Organigrama</a></li>
+                                <li><a class="dropdown-item">Dependencias</a></li>
+                                <li><a class="dropdown-item">Gobernador</a></li>
+                                <li><a class="dropdown-item">Gabinetes</a></li>
+                            </ul>
                         </li>
-    
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Trámites
                             </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item">Impuesto Vehicular</a>
-                                <a class="dropdown-item">Estampillas</a>
-                                <a class="dropdown-item">Pasaportes</a>
-                                <a class="dropdown-item">Seguimiento a cuentas</a>
-                            </div>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item">Impuesto Vehicular</a></li>
+                                <li><a class="dropdown-item">Estampillas</a></li>
+                                <li><a class="dropdown-item">Pasaportes</a></li>
+                                <li><a class="dropdown-item">Seguimiento a cuentas</a></li>
+                            </ul>
                         </li>
-    
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Atención al Ciudadano
                             </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">PQRSD</a>
-                                <a class="dropdown-item" href="#">Ubicación física</a>
-                                <a class="dropdown-item" href="#">Preguntas/ Respuestas frecuentes</a>
-                                <a class="dropdown-item" href="#">Glosario</a>
-                            </div>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item">PQRSD</a></li>
+                                <li><a class="dropdown-item">Ubicación física</a></li>
+                                <li><a class="dropdown-item">Preguntas/ Respuestas frecuentes</a></li>
+                                <li><a class="dropdown-item">Glosario</a></li>
+                            </ul>
                         </li>
-    
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Normatividad
                             </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item">Normatividad</a>
-                            </div>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item">Normatividad</a></li>
+                            </ul>
                         </li>
-    
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Transparencia
                             </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item">Transparencia</a>
-                            </div>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item">Transparencia</a></li>
+                            </ul>
                         </li>
+                    </ul>
                 </div>
-            </nav>         
-        </div>
+            </div>
+          </nav>
     </header>
     
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -234,10 +224,9 @@
                 </div>
             </div>
         </div>
-    </main>
+    </main> 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.js"></script>
 
-    
-
-    
 </body>
 </html>
