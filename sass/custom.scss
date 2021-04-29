@@ -1,7 +1,8 @@
 $font-family-sans-serif: 'Barlow Semi Condensed', sans-serif;
+
 $primary:#198754;
 $success: #49556B;
-$dark: #18202D;
+$dark: #000000;
 $secondary: #EDF2F8;
 
 @media (min-width: 992px) { 
@@ -16,7 +17,7 @@ $secondary: #EDF2F8;
 .fondo-card{
     background-image: url(../images/bg-pattern-quotation.svg);
     background-repeat: no-repeat;
-    background-position: 80% top;
+    background-position: 85% top;
 }
 
 $container-max-widths: (
