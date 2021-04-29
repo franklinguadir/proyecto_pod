@@ -32,4 +32,28 @@ $container-max-widths: (
     width: 100%;
     height: 80%;
   }
+
+:root{
+    --offcanvas-width: 270px;
+    --topNavbatHeight: 56px;
+}
+
+.sidebar-nav{
+    width: var(--offcanvas-width);
+}
+
+@media(min-width:992px){
+    body{
+        overflow: auto !important;
+    }
+    .offcanvas-backdrop::before{
+        display: none;
+    }
+    .sidebar-nav{
+        transform: none;
+        visibility: visible im !important;
+        top:var(--topNavbatHeight);
+        height: calc(100% - var(--topNavbatHeight));
+    }
+}
 @import "../node_modules/bootstrap/scss/bootstrap";
