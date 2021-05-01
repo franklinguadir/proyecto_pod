@@ -3,7 +3,9 @@ html, body, #mapid {
 }
 body #map{
     padding: 0;
-    margin: 0;
+    margin-right:0 auto;
+    margin-top: 56px;
+    align-content: flex-center;
 }
 :root{
     --offcanvas-width: 270px;
