@@ -1,8 +1,10 @@
-#mapid{
-    width: 1000px;
-    height: 500px;
+html, body, #mapid {
+    height: 100%;
 }
-
+body #map{
+    padding: 0;
+    margin: 0;
+}
 :root{
     --offcanvas-width: 270px;
     --topNavbarHeight: 56px;
@@ -40,5 +42,4 @@
         top: var(--topNavbarHeight);
         height: calc(100% -var(--topNavbarHeight));
     }
-}
-
+}   
