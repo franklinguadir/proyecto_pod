@@ -1,11 +1,9 @@
 html, body, #mapid {
-    height: 100%;
+    height: 572px;
 }
-body #map{
+body #mapid{
     padding: 0;
-    margin-right:0 auto;
     margin-top: 56px;
-    align-content: flex-center;
 }
 :root{
     --offcanvas-width: 270px;
