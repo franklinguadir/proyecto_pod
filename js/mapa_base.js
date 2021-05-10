@@ -7,3 +7,5 @@ var mymap = L.map('mapid').setView([1.39322, -77.6497169], 8);
             zoomOffset: -1,
             accessToken: 'pk.eyJ1IjoiZnJhbmtsaW45MyIsImEiOiJja2FzYWp3NHYwYnF6MnRwYmNyODJ3MWFmIn0.xl8Lg71rMN8tvPlmPQNmnA'
         }).addTo(mymap);
+
+L.geoJson(municipios).addTo(mymap);
