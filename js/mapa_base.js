@@ -10,14 +10,14 @@ var mymap = L.map('mapid').setView([1.39322, -77.6497169], 8);
 
 
     function style_mpios(feature) {										
-    return {
-    fillColor: 'white',
-    weight: 2,
-    opacity: 0.5,
-    color: 'black',
-    dashArray: '1',
-    fillOpacity: 0
-    }};
+        return {
+        fillColor: 'white',
+        weight: 2,
+        opacity: 0.5,
+        color: 'black',
+        dashArray: '1',
+        fillOpacity: 0
+        }};
         
 var municipios = L.geoJson(municipios,{
     style: style_mpios
