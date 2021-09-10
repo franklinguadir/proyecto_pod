@@ -30,7 +30,7 @@ var municipios = L.geoJson(municipios,{
 //    attribution:'POD Nariño',
 //    transparent: true
 //}).addTo(mymap);
-ar baseLayers = {
+var baseLayers = {
     "Mapbox": mapbox,
     "OpenStreetMap": osm
 };
