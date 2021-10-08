@@ -23,10 +23,10 @@ var municipios = L.geoJson(municipios,{
     style: style_mpios
 }).addTo(mymap);
 
-//var geomorfo = L.tileLayer.wms('http://localhost:8080/geoserver/pod_narino/wms',{
-//    layers: 'geomorfologia',
-//    style: 'geomorfologia_estilo',
-//    format: 'image/png',
-//    attribution:'POD Nariño',
-//    transparent: true
-//}).addTo(mymap);
+var geomorfo = L.tileLayer.wms('http://localhost:8080/geoserver/pod_narino/wms',{
+    layers: 'geomorfologia',
+    style: 'geomorfologia_estilo',
+    format: 'image/png',
+    attribution:'POD Nariño',
+    transparent: true
+}).addTo(mymap);
