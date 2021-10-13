@@ -20,13 +20,25 @@ var mymap = L.map('mapid').setView([1.39322, -77.6497169], 8);
         }};
         
 var municipios = L.geoJson(municipios,{
-    style: style_mpios
+    style: style_mpios      
 }).addTo(mymap);
 
-var geomorfo = L.tileLayer.wms('http://localhost:8080/geoserver/pod_narino/wms',{
-    layers: 'geomorfologia',
-    style: 'geomorfologia_estilo',
-    format: 'image/png',
-    attribution:'POD Nariño',
-    transparent: true
-}).addTo(mymap);
+var mapa_base;
+
+
+function cambiar_mapabase(capa){
+    if (mymap.hasLayer(mapa_base)) {
+        mymap.removeLayer(mapa_base);
+      }
+      if(capa!='ninguna'){
+        mapa_base = L.tileLayer.wms('http://localhost:8080/geoserver/pod_narino/wms',{
+            layers: capa,
+            style: capa+'_estilo',
+            format: 'image/png',
+            attribution:'POD Nariño',
+            transparent: true
+        }).addTo(mymap);
+      }
+    
+
+}
