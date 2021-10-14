@@ -39,6 +39,29 @@ function cambiar_mapabase(capa){
             transparent: true
         }).addTo(mymap);
       }
-    
+};
 
-}
+//control de escala
+L.control.scale({imperial:false}).addTo(mymap);
+
+//Adicionar leyenda
+const leyenda = L.control.Legend({
+    position: "bottomright",
+    collapsed: false,
+    symbolWidth: 24,
+    opacity: 1,
+    column: 1,
+    legends: [{
+        label: "Municipios",
+        type: "rectangle",
+        color: "black",
+        fillColor:"white",
+        dashArray:[2,2],
+        weight: 2
+    },
+    {
+        label: "mapa_base",
+        type: "rectangle",
+        url: "'http://localhost:8080/geoserver/pod_narino/wms'"
+    }]
+}).addTo(mymap);
