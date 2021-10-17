@@ -25,11 +25,12 @@ var municipios = L.geoJson(municipios,{
 
 var mapa_base;
 
-
 function cambiar_mapabase(capa){
     if (mymap.hasLayer(mapa_base)) {
-        mymap.removeLayer(mapa_base);
+        mymap.removeLayer(mapa_base),
+        mymap.removeControl(layerLegend);
       }
+    
       if(capa!='ninguna'){
         mapa_base = L.tileLayer.wms('http://localhost:8080/geoserver/pod_narino/wms',{
             layers: capa,
@@ -38,7 +39,12 @@ function cambiar_mapabase(capa){
             attribution:'POD Nariño',
             transparent: true
         }).addTo(mymap);
-      }
+    }
+      if(capa!='niguna'){
+        layerLegend = L.Geoserver.legend("http://localhost:8080/geoserver/pod_narino/wms",{
+        layers: capa,
+        }).addTo(mymap);
+    }
 };
 
 //control de escala
@@ -66,14 +72,16 @@ L.control.scale({imperial:false}).addTo(mymap);
 //    }]
 //}).addTo(mymap);
 
-var legend = L.control({position: 'bottomright'});
-
-legend.onAdd = function (mymap) {
-
-var div = L.DomUtil.create('div', 'info legend');
-
-div.innerHTML +=
-'<img alt="legend" src="http://localhost:8080/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=inundacion"width="127" height="120"/>';
-};
-
-legend.addTo(mymap);
+// Insertando una leyenda en el mapa
+//var legend = L.control({position: 'bottomright'});
+//
+//legend.onAdd = function (mymap) {
+//
+//var div = L.DomUtil.create('div', 'info legend');
+//
+//div.innerHTML +=
+//'<img alt="legend" src=" http://localhost:8080/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=inundacion " width="127" height="120" />';
+//
+//};
+//
+//legend.addTo(mymap);
