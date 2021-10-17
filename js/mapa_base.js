@@ -45,23 +45,35 @@ function cambiar_mapabase(capa){
 L.control.scale({imperial:false}).addTo(mymap);
 
 //Adicionar leyenda
-const leyenda = L.control.Legend({
-    position: "bottomright",
-    collapsed: false,
-    symbolWidth: 24,
-    opacity: 1,
-    column: 1,
-    legends: [{
-        label: "Municipios",
-        type: "rectangle",
-        color: "black",
-        fillColor:"white",
-        dashArray:[2,2],
-        weight: 2
-    },
-    {
-        label: "mapa_base",
-        type: "rectangle",
-        url: "'http://localhost:8080/geoserver/pod_narino/wms'"
-    }]
-}).addTo(mymap);
+//const leyenda = L.control.Legend({
+//    position: "bottomright",
+//    collapsed: false,
+//    symbolWidth: 24,
+//    opacity: 1,
+//    column: 1,
+//    legends: [{
+//        label: "Municipios",
+//        type: "rectangle",
+//        color: "black",
+//        fillColor:"white",
+//        dashArray:[2,2],
+//        weight: 2
+//    },
+//    {
+//        label: "mapa_base",
+//        type: "rectangle",
+//        url: "'http://localhost:8080/geoserver/pod_narino/wms'"
+//    }]
+//}).addTo(mymap);
+
+var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function (mymap) {
+
+var div = L.DomUtil.create('div', 'info legend');
+
+div.innerHTML +=
+'<img alt="legend" src="http://localhost:8080/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=inundacion"width="127" height="120"/>';
+};
+
+legend.addTo(mymap);

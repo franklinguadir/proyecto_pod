@@ -92,3 +92,7 @@ body #mapid{
         height: calc(100% -var(--topNavbarHeight));
     }
 }   
+
+.legend {
+  opacity: 0.7;
+  }
