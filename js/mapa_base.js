@@ -7,22 +7,7 @@ var mymap = L.map('mapid').setView([1.39322, -77.6497169], 8);
             zoomOffset: -1,
             accessToken: 'pk.eyJ1IjoiZnJhbmtsaW45MyIsImEiOiJja2FzYWp3NHYwYnF6MnRwYmNyODJ3MWFmIn0.xl8Lg71rMN8tvPlmPQNmnA'
         }).addTo(mymap);
-
-
-    function style_mpios(feature) {										
-        return {
-        fillColor: 'white',
-        weight: 2,
-        opacity: 0.5,
-        color: 'black',
-        dashArray: '1',
-        fillOpacity: 0
-        }};
         
-var municipios = L.geoJson(municipios,{
-    style: style_mpios      
-}).addTo(mymap);
-
 var mapa_base;
 
 function cambiar_mapabase(capa){
@@ -37,51 +22,120 @@ function cambiar_mapabase(capa){
             style: capa+'_estilo',
             format: 'image/png',
             attribution:'POD Nariño',
-            transparent: true
+            transparent: true,
+            tiled: true,
+            //opacity: 0.7
         }).addTo(mymap);
     }
-      if(capa!='niguna'){
+      if(capa!='niguna' && capa!='geologia_1' && capa!='geomorfologia'){
         layerLegend = L.Geoserver.legend("http://localhost:8080/geoserver/pod_narino/wms",{
         layers: capa,
         }).addTo(mymap);
-    }
+    }   
 };
 
 //control de escala
 L.control.scale({imperial:false}).addTo(mymap);
 
-//Adicionar leyenda
-//const leyenda = L.control.Legend({
-//    position: "bottomright",
-//    collapsed: false,
-//    symbolWidth: 24,
-//    opacity: 1,
-//    column: 1,
-//    legends: [{
-//        label: "Municipios",
-//        type: "rectangle",
-//        color: "black",
-//        fillColor:"white",
-//        dashArray:[2,2],
-//        weight: 2
-//    },
-//    {
-//        label: "mapa_base",
-//        type: "rectangle",
-//        url: "'http://localhost:8080/geoserver/pod_narino/wms'"
-//    }]
-//}).addTo(mymap);
 
-// Insertando una leyenda en el mapa
-//var legend = L.control({position: 'bottomright'});
-//
-//legend.onAdd = function (mymap) {
-//
-//var div = L.DomUtil.create('div', 'info legend');
-//
-//div.innerHTML +=
-//'<img alt="legend" src=" http://localhost:8080/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=inundacion " width="127" height="120" />';
-//
-//};
-//
-//legend.addTo(mymap);
+// Agregar control para ver los datos al pasar el puntero
+
+var info = L.control();
+
+// Crear un div con una clase info
+info.onAdd = function(mymap){
+    this._div = L.DomUtil.create('div','info');
+    this.update();
+    return this._div;
+};
+
+// Agregar el metodo que actualiza el control segun el puntero vaya pasando
+info.update = function(props){
+    this._div.innerHTML = '<h4>Descripción</h4>' + 
+                            (props ? '<b>' + props.MPIO_CNMBR + '</b><br/>' + props.SUB_REGION + '</sup>'
+                            : 'Pase el puntero por un municipio');
+};
+
+info.addTo(mymap);
+
+// Generar rangos de colores de acuerdo con el atributo o campo TOT_VIVIEN
+function style_mpios(feature) {										
+    return {
+    fillColor: '#ffffff00',
+    weight: 2,
+    opacity: 0.3,
+    color: 'black',
+    dashArray: '1',
+    fillOpacity: 0
+}};
+
+// Crear la funcion para mostrar la simbologia de acuerdo al campo TOT_VIVIEN
+
+function style(feature){
+    return {
+        fillColor: getColor(feature.properties.MPIO_CNMBR),
+        weight: 2,
+        opacity: 0.3,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.7
+    };
+}
+
+// AGregar interaccion del puntero con la capa para resaltar el objeto
+function highlightFeature(e) {
+    var layer = e.target;
+
+    layer.setStyle({
+        weight: 5,
+        color: '#FFE333',
+        dashArray: '',
+        fillOpacity: 0.7
+    });
+
+    info.update(layer.feature.properties);
+}
+
+// Configurar los cambios de resaltado y zoom de la capa
+
+var municipios;
+var wmsgeologia;
+
+function resetHighlight(e){
+    municipios.resetStyle(e.target);
+    info.update();
+}
+
+function zoomToFeature(e){
+    map.fitBounds(e.target.getBounds());
+}
+
+function onEachFeature(feature, layer){
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+        click: zoomToFeature
+    });
+}
+
+municipios = L.geoJson(municipios,{
+    style: style_mpios,
+    onEachFeature: onEachFeature    
+}).addTo(mymap);
+
+var wmsgeologia = L.tileLayer.wms('http://localhost:8080/geoserver/pod_narino/wms?',{layers:'geologia_1'});
+var wfsURL = wmsgeologia + "http://localhost:8080/geoserver/pod_narino/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=pod_narino%3Ageologia_1&maxFeatures=50&outputFormat=application%2Fjson"
+
+async function getWFSgeojson() {
+    try{
+        const response = await fetch(wfsURL);
+        console.log(response);
+        return await response.json();
+
+    } catch(err){
+        console.log(err);
+
+    }
+    
+}
+getWFSgeojson();
