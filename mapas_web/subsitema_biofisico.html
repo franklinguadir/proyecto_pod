@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subsistema Biofísico</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/estilo.css">
+    <link rel="stylesheet" href="/css/leaflet.legend.css">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+    <script type="text/javascript" src="/mapas/municipios.js"></script>
+    <script src="/js/leaflet.legend.js"></script>
+    <script src="/js/L.Geoserver.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-top">
+            <div class="container-fluid">
+                <button class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <span class="navbar-toggler-icon" data-bs-target="#offcanvasExample"></span>
+                  </button>
+                <img src="/images/riesgo.jpg" width="35" alt="icono Biofísico" class="border border-secondary border-3 rounded-circle">
+              <a class="navbar-brand px-1 me-auto text-uppercase fw-bold fs-6" href="#">Biofisico</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="d-flex ms-auto my-3 my-lg-0">
+                    <div class="input-group">
+                        <input type="search" id="search" class="form-control" placeholder="Buscar" aria-label="Search" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-primary" type="submit"><i class="bi bi-search"></i></button>
+                      </div>
+                </form>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-fill"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Iniciar sesión</a></li>
+                            <li><a class="dropdown-item" href="#">Finalizar sesión</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Registrate</a></li>
+                        </ul>
+                    </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+    </header>
+    <nav>          
+        <div class="offcanvas offcanvas-start sidebar-nav bg-white" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-body p-0">
+                <nav class="navbar-dark">
+                    <ul class="list-unstyled">
+                        <li class="navbar-nav">
+                            <div class="text-muted small fw-bold text-uppercase px-3">
+                                CORE
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-2 active">
+                                <span><i class="bi bi-speedometer2"></i></span>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>    
+                            <hr class="dropdown-divider">
+                        </li>
+                        <div class="text-muted small fw-bold text-uppercase px-3">
+                            Interfaz
+                        </div>
+                        <li>
+                            <a class="nav-link px-3 sidebar-link" 
+                                data-bs-toggle="collapse" 
+                                href="#collapseExample" 
+                                role="button" 
+                                aria-expanded="false" 
+                                aria-controls="collapseExample">
+                                <span class="me-2">
+                                    <i class="bi bi-stack"></i>
+                                </span>
+                                <span>Capas</span>
+                                <span class="right-icon ms-auto">                                                                                                                                                                                                                                                                                                                                                                                                                   
+                                    <i class="bi bi-chevron-down"></i>
+                                </span>
+                            </a>
+                            <div class="collapse" id="collapseExample">
+                                <div class="card card-body">
+                                    <ul class="list-unstyled">  
+                                        <div class="d-grid gap-2">
+                                            <button class="btn btn-warning" type="button" onclick="cambiar_mapabase('geologia_1')">Geologia</button>
+                                            <button class="btn btn-warning" type="button" onclick="cambiar_mapabase('geomorfologia')">Geomorfologia</button>                                                                                                                                                                                                                                                                  
+                                            <button class="btn btn-warning" type="button" onclick="cambiar_mapabase('incedios_forestales')">Incendio forestal</button>
+                                            <button class="btn btn-warning" type="button" onclick="cambiar_mapabase('inundacion')">Inundación</button>
+                                            <button class="btn btn-warning" type="button" onclick="cambiar_mapabase('remocion_masa')">Remoción en masa</button>
+                                            <button class="btn btn-warning" type="button" onclick="cambiar_mapabase('tsunami')">Tsunami</button>
+                                            <button class="btn btn-warning" type="button" onclick="cambiar_mapabase('ninguno')">Ninguna</button>
+                                        </div>                             
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div id="mapid">
+            <script src="/js/mapa_base.js"></script>
+        </div>
+        
+        <div class="cold-md-7">
+            <table class="table table-bordered table-sm">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Name</td>
+                        <td>Description</td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </main>
+        
+    <script src="/js/mapa_base.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/codigo.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
