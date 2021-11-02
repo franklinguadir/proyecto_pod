@@ -1,13 +1,13 @@
-var mymap = L.map('mapid').setView([1.39322, -77.6497169], 8);
+var mymap = new L.map('mapid').setView([1.39322, -77.6497169], 8);
             L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
             maxZoom: 18,
             id: 'mapbox/streets-v11',
             tileSize: 512,
             zoomOffset: -1,
-            accessToken: 'pk.eyJ1IjoiZnJhbmtsaW45MyIsImEiOiJja2FzYWp3NHYwYnF6MnRwYmNyODJ3MWFmIn0.xl8Lg71rMN8tvPlmPQNmnA'
-        }).addTo(mymap);
-        
+            accessToken: 'pk.eyJ1IjoiZnJhbmtsaW45MyIsImEiOiJja3Y2dW1ta3gweTc5MzBud3d3dDAyMjVnIn0.WUX_aHtecxyuJdGfWBoLnQ'
+        }).addTo(mymap);    
+
 var mapa_base;
 
 function cambiar_mapabase(capa){
@@ -36,9 +36,6 @@ function cambiar_mapabase(capa){
 
 //control de escala
 L.control.scale({imperial:false}).addTo(mymap);
-
-
-// Agregar control para ver los datos al pasar el puntero
 
 var info = L.control();
 
@@ -124,7 +121,7 @@ municipios = L.geoJson(municipios,{
 }).addTo(mymap);
 
 var wmsgeologia = L.tileLayer.wms('http://localhost:8080/geoserver/pod_narino/wms?',{layers:'geologia_1'});
-var wfsURL = wmsgeologia + "http://localhost:8080/geoserver/pod_narino/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=pod_narino%3Ageologia_1&maxFeatures=50&outputFormat=application%2Fjson"
+var wfsURL = wmsgeologia + "WFS&version=1.1.0&request=GetFeature&typeName=geologia_1&oupudFormat=application/json"
 
 async function getWFSgeojson() {
     try{
@@ -134,8 +131,6 @@ async function getWFSgeojson() {
 
     } catch(err){
         console.log(err);
-
     }
-    
 }
 getWFSgeojson();
