@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.0.0-beta3"
+    "bootstrap": "^5.0.0-beta3",
+    "leaflet-easyprint": "^2.1.9"
   },
   "devDependencies": {
     "snowpack": "^3.3.5"

@@ -1,12 +1,17 @@
-var mymap = new L.map('mapid').setView([1.39322, -77.6497169], 8);
-            L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+var mymap = L.map("mapid", {center: [1.39322, -77.6497169], zoom: 8, zoomControl: false});
+
+var mapbox = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            minZoom: 8,
             maxZoom: 18,
+            zoomControl: false,
             id: 'mapbox/streets-v11',
             tileSize: 512,
             zoomOffset: -1,
-            accessToken: 'pk.eyJ1IjoiZnJhbmtsaW45MyIsImEiOiJja3Y2dW1ta3gweTc5MzBud3d3dDAyMjVnIn0.WUX_aHtecxyuJdGfWBoLnQ'
-        }).addTo(mymap);    
+            accessToken: 'pk.eyJ1IjoiZnJhbmtsaW45MyIsImEiOiJjbDJmb2h3cjIwMnB6M2pwaWNxMXhhMmI5In0.t2CIbZvMYnpNcWXgG0y0qg'
+        }).addTo(mymap); 
+
+var zoom_bar = new L.Control.ZoomBar({position: 'topleft'}).addTo(mymap);
 
 var mapa_base;
 
@@ -134,3 +139,14 @@ async function getWFSgeojson() {
     }
 }
 getWFSgeojson();
+
+//impresión de mapas
+
+var printer = L.easyPrint({
+    tileLayer: mymap,
+    sizeModes: ['Current', 'A4Landscape', 'A4Portrait'],
+    filename: 'Mi mapa impreso',
+    exportOnly: true,
+    hideClasses: ['leaflet-control-easyPrint'],
+    hideControlContainer: false
+}).addTo(mymap);
