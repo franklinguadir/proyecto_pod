@@ -141,7 +141,7 @@ async function getWFSgeojson() {
 getWFSgeojson();
 
 //impresión de mapas
-
+var popup = L.popup();
 var printer = L.easyPrint({
     tileLayer: mymap,
     sizeModes: ['Current', 'A4Landscape', 'A4Portrait'],
