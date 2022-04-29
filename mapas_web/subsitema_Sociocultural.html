@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subsistema Sociocultural</title>
-
-    <link rel="stylesheet" href="/css/custom.css">
-    <link rel="stylesheet" href="/css/estilo.css">
-    <link rel="stylesheet" href="/css/leaflet.css">
-    <script src="/js/leaflet.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
-    <script type="text/javascript" src="/mapas/municipios.js"></script>
-    <script src="/js/leaflet.legend.js"></script>
-    <script src="/js/L.Geoserver.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/L.Control.ZoomBar.css"/>
-    <script type="text/javascript" src="/js/L.Control.ZoomBar.js"></script>
-    <script src="/js/bundle.js"></script>
-
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Subsistema Gestión del Riesgo</title>
+    
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+            integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+            crossorigin=""/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="/css/custom.css">
+        <link rel="stylesheet" href="/css/estilo.css">
+        <link rel="stylesheet" href="/css/leaflet.legend.css">
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+            <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+        <script type="text/javascript" src="/mapas/municipios.js"></script>
+        <script src="/js/leaflet.legend.js"></script>
+        <script src="/js/L.Geoserver.js"></script>
+        <script src="/js/leaflet.browser.print.min.js"></script>
+    </head>
 <body class="hidden">
     <div class="centrado" id="onload">
         <div class="lds-facebook">
@@ -107,7 +111,7 @@
                                                 <span class="me-2">
                                                     <i class="bi bi-stack"></i>
                                                 </span>
-                                                <span>nested link</span>
+                                                <span>Capas</span>
                                             </a>
                                             <div class="collapse" id="collapseExample">
                                                 <div class="card card-body">

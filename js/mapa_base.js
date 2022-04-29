@@ -141,12 +141,30 @@ async function getWFSgeojson() {
 getWFSgeojson();
 
 //impresión de mapas
-var popup = L.popup();
-var printer = L.easyPrint({
-    tileLayer: mymap,
-    sizeModes: ['Current', 'A4Landscape', 'A4Portrait'],
-    filename: 'Mi mapa impreso',
-    exportOnly: true,
-    hideClasses: ['leaflet-control-easyPrint'],
-    hideControlContainer: false
+//var popup = L.popup();
+//var printer = L.easyPrint({
+//    tileLayer: mymap,
+//    sizeModes: ['Current', 'A4Landscape', 'A4Portrait'],
+//    filename: 'Mi mapa impreso',
+//    exportOnly: true,
+//    hideClasses: ['leaflet-control-easyPrint'],
+//    hideControlContainer: false
+//}).addTo(mymap);
+
+L.control.browserPrint({position: 'topleft', title: 'Print ...'}).addTo(mymap);
+
+// barra de busqueda
+
+var searchbox = L.control.searchbox({
+    position: 'topright',
+    expand: 'left'
 }).addTo(mymap);
+
+var searchbox = L.control.searchbox({
+    position: 'topright',
+    expand: 'left',
+    width: '450px',
+    autocompleteFeatures: ['setValueOnClick']
+}).addTo(map);
+
+
